@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>quakejs</title>
+		<title>Quake</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<style>
 			html, body {
@@ -59,6 +59,8 @@
 	</head>
 	<body>
 		<div id="viewport-frame"></div>
+		<!--<button onclick="document.documentElement.requestFullscreen()"
+		style="z-index:9999; position:absolute; left:10px, top:10px;padding:50px">FULL</button>-->
 	</body>
 
 	<script>
@@ -66,6 +68,12 @@
 			var search = /([^&=]+)/g;
 			var query  = window.location.search.substring(1);
 
+			//seb
+			var nombre = prompt('** PANTALLA COMPLETA: ALT+ENTER **\n\nEscribe tu nombre:', localStorage.getItem('name'));
+			if (!nombre) nombre = 'Jugador';
+			localStorage.setItem('name', nombre);
+			query='connect q.seb.cl:27960 +rconpassword tr +name '+nombre+' +bind mouse2 "+moveup" +model visor/blue';
+			
 			var args = [];
 
 			var match;

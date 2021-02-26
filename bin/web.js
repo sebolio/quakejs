@@ -21,8 +21,8 @@ var config = loadConfig(argv.config);
 
 function loadConfig(configPath) {
 	var config = {
-		port: 8080,
-		content: 'localhost:9000'
+		port: 80,
+		content: 'quake3.seb.cl:9000'
 	};
 
 	try {

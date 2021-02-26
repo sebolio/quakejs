@@ -9487,7 +9487,7 @@ function copyTempDouble(ptr) {
   				}
   
   				if (!asset) {
-  					return callback(new Error('Failed to find "' + installer.name + '" in manifest'));
+  					return (new Error('Failed to find "' + installer.name + '" in manifest'));
   				}
   
   				if (!SYSC.ValidateInstaller(installer)) {

@@ -4,7 +4,7 @@ var fs = require('fs');
 var logger = require('winston');
 var path = require('path');
 var exec = require('child_process').exec;
-var execSync = require('execSync').exec;
+var execSync = require('child_process').execSync;
 var os = require('os');
 var temp = require('temp');
 var wrench = require('wrench');
@@ -279,7 +279,7 @@ function writePak(pak, fileMap, splitThreshold, callback) {
 		var baseDir = path.normalize(absolute.replace(relative, ''));
 
 		exec('zip \"' + currentPak + '\" \"' + relative + '\"', { cwd: baseDir }, function (err) {
-			if (err) return cb(err);
+			if (err) return console.log('FAIL',err);
 
 			if (splitThreshold) {
 				var stats = fs.statSync(currentPak);

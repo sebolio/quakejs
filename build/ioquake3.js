@@ -110,10 +110,10 @@ else if (ENVIRONMENT_IS_WEB || ENVIRONMENT_IS_WORKER) {
 
   if (typeof console !== 'undefined') {
     if (!Module['print']) Module['print'] = function print(x) {
-      console.log(x);
+      console.log(':)', x);
     };
     if (!Module['printErr']) Module['printErr'] = function printErr(x) {
-      console.log(x);
+      console.log('noo', x);
     };
   } else {
     // Probably a worker, and without console.log. We can do very little here...
@@ -15362,7 +15362,7 @@ function copyTempDouble(ptr) {
   				}
   
   				if (!asset) {
-  					return callback(new Error('Failed to find "' + installer.name + '" in manifest'));
+  					return (new Error('Failed to find "' + installer.name + '" in manifest'));
   				}
   
   				if (!SYSC.ValidateInstaller(installer)) {

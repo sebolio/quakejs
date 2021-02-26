@@ -1,0 +1,6 @@
+server:
+node build/ioq3ded.js +set dedicated 1 +exec server.conf
+
+web:
+node bin/web.js
+
